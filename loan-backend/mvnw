@@ -1,0 +1,32 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+# Licensed to the Apache Software Foundation (ASF)
+# Maven Start Up Batch script
+# ----------------------------------------------------------------------------
+
+if [ -z "$JAVA_HOME" ]; then
+  javaExecutable="`which javaw`"
+  if [ -z "$javaExecutable" ] || [ "`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then
+    javaExecutable="`which java`"
+  fi
+else
+  javaExecutable="$JAVA_HOME/bin/java"
+fi
+
+MAVEN_PROJECTBASEDIR="${MAVEN_BASEDIR:-}"
+if [ -z "$MAVEN_PROJECTBASEDIR" ]; then
+  MAVEN_PROJECTBASEDIR=`pwd`
+fi
+
+MAVEN_OPTS="${MAVEN_OPTS:-}"
+MAVEN_DEBUG_OPTS="${MAVEN_DEBUG_OPTS:-}"
+
+WRAPPER_JAR=".mvn/wrapper/maven-wrapper.jar"
+WRAPPER_LAUNCHER="org.apache.maven.wrapper.MavenWrapperMain"
+
+exec "$javaExecutable" \
+  $MAVEN_OPTS \
+  $MAVEN_DEBUG_OPTS \
+  -classpath "$MAVEN_PROJECTBASEDIR/$WRAPPER_JAR" \
+  "-Dmaven.multiModuleProjectDirectory=$MAVEN_PROJECTBASEDIR" \
+  $WRAPPER_LAUNCHER "$@"
